@@ -26,7 +26,7 @@ In this tutorial, we will walk through the process of creating a remote server o
 
 2. Go to Digital Ocean and click **manage**
 
-<img src="./images/manage.png" alt="Manage Image" title="Optional title" />
+<img src="pictures/manage.png" alt="Manage Image" style="width:50%;">
 
 
 

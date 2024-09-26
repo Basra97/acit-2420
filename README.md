@@ -1,5 +1,7 @@
 ## Creating a Remote Server with DigitalOcean using doctl
 
+NOTE: Instructions for MacOs Users
+
 ## Table of Contents
 
 1. Introduction
@@ -66,9 +68,17 @@ SSH keys allow you to securley connect to your Droplet, and they are safer than 
 
 NOTE: Change "your email address" to your email of choice and you can change key name, for example hello-key
 
+5. Press **enter** and type a passphrase or press **enter** for no passphrase
+
+(image)
+
 ### Adding public key to your DigitalOcean Account
 
-1. 
+1. Copy and paste the following commands to copy your SSH key
+
+```pbcopy < ~/.ssh/do-key.pub``` 
+
+NOTE: Replace "do-key" with the name of your SSH key.
 
 
 

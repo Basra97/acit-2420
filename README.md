@@ -17,6 +17,8 @@ NOTE: Instructions for MacOs Users
 
 redo above after finishing
 
+Use <br>
+
 ## Introduction
 
 In this tutorial, we will walk through the process of creating a remote server on DigitalOcean using the doctl command-line tool. We will utilize cloud-init to automate the initial configuration of the server, including user creation, package installation, and SSH key setup.
@@ -198,7 +200,10 @@ go to home and see if the yaml file is made
 
 3. Copy and Paste the following into the terminal
 
-``` doctl compute droplet create --image 165064169 --size s-1vcpu-1gb --region sfo3 --ssh-keys < git-user > --user-data-file < path-to-your-cloud-init-file > --wait first-droplet  ``
+``` 
+doctl compute droplet create --image 165064223 --size s-1vcpu-1gb --region sfo3 --ssh-keys 43339841 --user-data-file /Users/karanbasra/cloud-config.yaml --wait first-droplet
+ 
+```
 
 4. Change < git-user > with your ID number from step 2
 
@@ -206,10 +211,24 @@ go to home and see if the yaml file is made
 
 (image)
 
-6. Press Enter
+6. Press Enter 
+
+NOTE: This command may take a minute
+
+(image)
+
+7. Type the following command to verify if it worked
+
+``` ssh -i < /path/to/private-key > username@your-droplet-ip ```
+
+or
+
+``` doctl compute droplet list ```
+
+ssh Karn@64.23.190.208
 
 
-
+fix problem above
 
 
 

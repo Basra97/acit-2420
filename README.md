@@ -150,6 +150,43 @@ Example Validating token... ✔
 
 (image)
 
+### Configuration of The Cloud Init File
+
+install neovim
+
+1. Type the following command to create a file
+
+```nvim cloud-config.yaml```
+
+2. Copy and Paste the following content into the **file**, then pres i for "insert mode"
+
+``` #cloud-config
+users:
+  - name: example-user
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_import_id:
+      - gh:<your-GitHub-username>
+disable_root: true
+packages:
+  - nginx
+runcmd:
+  - 'export PUBLIC_IPV4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)'
+  - 'echo Droplet: $(hostname), IP Address: $PUBLIC_IPV4 > /var/www/html/index.html' ``` 
+
+3. Change name to your name
+
+4. Change gh:<your-GitHub-username> with your GitHub username
+
+NOTE: Remove <>
+
+(image)
+
+5. Press esc to exit Insert Mode and type :wq to save and exit nvim
+
+
+### Deployment of Droplet with Cloud-init
+
 
 
 

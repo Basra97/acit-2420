@@ -110,7 +110,7 @@ brew install doctl
 
 4.Type ```doctl version``` once installed to verify the installation
 
-(image)
+![Upload Image](./Pictures/Select%20your%20closes%20region%20and%20Click%20Upload%20Image.jpg)
 
 ### Creating an API Token
 
@@ -154,7 +154,7 @@ Example Validating token... ✔
 
 ### Configuration of The Cloud Init File 
 
-install neovim
+**install neovim** explain
 
 1. Type the following command to create a file
 
@@ -167,18 +167,18 @@ users:
   - name: example-user
     shell: /bin/bash
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
-    ssh_import_id:
-      - gh:<your-GitHub-username>
+    ssh_authorized_keys:
+      - <your public SSH Key>
 disable_root: true
 packages:
   - nginx
 runcmd:
   - 'export PUBLIC_IPV4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)'
-  - 'echo Droplet: $(hostname), IP Address: $PUBLIC_IPV4 > /var/www/html/index.html' 
+  - 'echo Droplet: $(hostname), IP Address: $PUBLIC_IPV4 > /var/www/html/index.html'
 
 3. Change name to your name
 
-4. Change gh:<your-GitHub-username> with your GitHub username
+4. Change gh:<your public SSH Key> with your SSH Key
 
 NOTE: Remove <>
 
@@ -186,10 +186,35 @@ NOTE: Remove <>
 
 5. Press esc to exit Insert Mode and type :wq to save and exit nvim
 
-###Configuration of The Cloud Init File 
+go to home and see if the yaml file is made
+
+### Deployment of Droplet with Cloud-init
+
+1. Open Terminal 
+
+2. Type or Copy the following command, then locate your key ID
+
+``` doctl compute ssh-key list ```
+
+3. Copy and Paste the following into the terminal
+
+``` doctl compute droplet create --image 165064169 --size s-1vcpu-1gb --region sfo3 --ssh-keys < git-user > --user-data-file < path-to-your-cloud-init-file > --wait first-droplet  ``
+
+4. Change < git-user > with your ID number from step 2
+
+5. Replace  < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
+
+(image)
+
+6. Press Enter
 
 
-### Configuration of The Cloud Init File
+
+
+
+
+
+
 
 
 

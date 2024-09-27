@@ -96,7 +96,65 @@ NOTE: If error message "SSH key content must be a valid SSH key" enter backspace
 
 ### Installing DOCTL 
 
-1. 
+1. Open your Terminal or Command Prompt
+
+2. Install Homebrew on your MacOs
+
+3. Once installed, Type and run the following **command**
+
+```brew install doctl``` 
+
+(image)
+
+4.Type ```doctl version``` once installed to verify the installation
+
+(image)
+
+### Creating an API Token
+
+1. Click API on the left hand side of the Menu on DigitalOcean
+
+(image)
+
+2. Click **Generate New Token**
+
+3. Type a **Token Name**, and give it **full access** then click **Generate Token**
+
+(image)
+
+4. Copy and Paste the **token** in a secure storage, file or server. 
+
+NOTE: A **Generated Token** is only shown once.
+
+### Using The API Token to Grant access to doctl
+
+1. Open terminal or command prompt
+
+2. Type the following command 
+
+```doctl auth init --context NAME```
+
+NOTE: Change **NAME** to something appropiate
+
+3. Copy and Paste your generated token into the terminal
+
+(image)
+
+4. Press Enter and wait for a green checkmark.
+
+Example Validating token... ✔
+
+(image)
+
+5. Run ```doctl account get``` to validate that doctl is working successfully
+
+(image)
+
+
+
+
+
+
 
 
 

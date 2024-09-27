@@ -80,8 +80,23 @@ NOTE: Change "your email address" to your email of choice and you can change key
 
 NOTE: Replace "do-key" with the name of your SSH key.
 
+2. Go to DigitalOcean and **click** settings. 
 
+(image)
 
+3. Click security and **add SSH key** 
+
+4. Paste the copied key in the content box then enter a SSH key name
+
+(image)
+
+NOTE: If error message "SSH key content must be a valid SSH key" enter backspace to troubleshoot this problem. 
+
+5. Click **Add SSH Key** 
+
+### Installing DOCTL 
+
+1. 
 
 
 

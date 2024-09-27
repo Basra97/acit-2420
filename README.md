@@ -225,17 +225,19 @@ or
 
 ``` doctl compute droplet list ```
 
-ssh Karn@64.23.190.208
+fix problem above, fixed
 
 
-fix problem above
-
-
+NOTE: if ``` [Karn@first-droplet ~]$ ``` appears you have successfully connected to your droplet
 
 
 
 
 
+add public key to digitalocean using doctl
+
+
+use doctl to add arch linux file to digital ocean
 
 
 

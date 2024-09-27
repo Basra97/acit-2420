@@ -102,7 +102,9 @@ NOTE: If error message "SSH key content must be a valid SSH key" enter backspace
 
 3. Once installed, Type and run the following **command**
 
-```brew install doctl``` 
+```
+brew install doctl
+``` 
 
 (image)
 
@@ -150,7 +152,7 @@ Example Validating token... ✔
 
 (image)
 
-### Configuration of The Cloud Init File
+### Configuration of The Cloud Init File 
 
 install neovim
 
@@ -159,8 +161,8 @@ install neovim
 ```nvim cloud-config.yaml```
 
 2. Copy and Paste the following content into the **file**, then pres i for "insert mode"
-
-``` #cloud-config
+#
+#cloud-config
 users:
   - name: example-user
     shell: /bin/bash
@@ -172,7 +174,7 @@ packages:
   - nginx
 runcmd:
   - 'export PUBLIC_IPV4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)'
-  - 'echo Droplet: $(hostname), IP Address: $PUBLIC_IPV4 > /var/www/html/index.html' ``` 
+  - 'echo Droplet: $(hostname), IP Address: $PUBLIC_IPV4 > /var/www/html/index.html' 
 
 3. Change name to your name
 
@@ -184,8 +186,12 @@ NOTE: Remove <>
 
 5. Press esc to exit Insert Mode and type :wq to save and exit nvim
 
+###Configuration of The Cloud Init File 
 
-### Deployment of Droplet with Cloud-init
+
+### Configuration of The Cloud Init File
+
+
 
 
 

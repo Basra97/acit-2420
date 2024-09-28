@@ -63,10 +63,11 @@ a
 
 4. ```cd``` into .ssh to navigate to the newly opened directory. 
 
-![picture of arch linux](./pictures/mkdir.png)
+![picture of cd](./pictures/mkdir.png)
 
 
-NOTE: Run ls -a to confirm if .ssh has been made.
+>[!NOTE]
+Run ls -a to confirm if .ssh has been made.
 
 
 5. Type ```ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"``` and **enter** to generate a new SSH key pair 
@@ -79,13 +80,14 @@ NOTE: Run ls -a to confirm if .ssh has been made.
 
 * ```-C``` adds a comment to the key, often for identification, such as your email address.
 
-NOTE: Change "your email address" to your email of choice and you can change do-key name, for example hello-key
+>[!NOTE]
+Change "your email address" to your email of choice and you can change do-key name, for example hello-key
 
 6. Press **enter** and type a passphrase or press **enter** for no passphrase
 
 7. Type ```cd .ssh``` then use ```ls``` to confirm your authorized keys
 
-![picture of arch linux](./pictures/ls.png) 
+![picture of keys](./pictures/ls.png) 
 
 ### Installing DOCTL 
 
@@ -106,13 +108,13 @@ brew install doctl
 ``` 
 * ```Brew install doctl``` command uses Homebrew to install the DigitalOcean command-line tool (doctl).
 
-![picture of arch linux](./pictures/brew.png)
+![picture of doctl](./pictures/brew.png)
 
 4.Type ```doctl version``` once installed to verify the installation
 
 * ```doctl version``` displays the version of doctl that is currently installed and verifies the installation.
 
-![Upload Image](./Pictures/doctl.png)
+![doctl version](./Pictures/doctl.png)
 
 ```doctl``` has been installed successfully!
 
@@ -120,17 +122,18 @@ brew install doctl
 
 1. Click API on the left hand side of the Menu on DigitalOcean
 
-![picture of arch linux](./pictures/PI.png)
+![picture of API](./pictures/PI.png)
 
 2. Click **Generate New Token**
 
 3. Type a **Token Name**, and give it **full access** then click **Generate Token**
 
-![picture of arch linux](./pictures/pat.png)
+![picture of token name](./pictures/pat.png)
 
 4. Copy and Paste the **token** in a secure storage, file or server. 
 
-NOTE: A **Generated Token** is only shown once.
+>[!NOTE]
+ A **Generated Token** is only shown once.
 
 Your API token has been created!
 
@@ -155,13 +158,13 @@ Your API token has been created!
 
 Example: Validating token... ✔
 
-![picture of arch linux](./pictures/validating.png)
+![picture of token](./pictures/validating.png)
 
 5. Run ```doctl account get``` to validate that doctl is working successfully
 
 * ```doctl account get``` retrieves and displays information about your DigitalOcean account
 
-![picture of arch linux](./pictures/doctlfn.png)
+![picture of doctl account](./pictures/doctlfn.png)
 
 ### Adding public key to your DigitalOcean Account using doctl
 
@@ -172,7 +175,8 @@ doctl compute ssh-key create "My SSH Key" --public-key "$(cat ~/.ssh/do-key.pub)
 
 ``` 
 
-NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
+>[!NOTE]
+Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
 
 * ```doctl compute ssh-key create``` command creates a new SSH key associated with your DigitalOcean account
 
@@ -182,7 +186,7 @@ NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your 
 
 2. Press Enter 
 
-![picture of arch linux](./pictures/compute.png)
+![picture of SSH](./pictures/compute.png)
 
 3. Go to DigitalOcean and **click** settings. 
 
@@ -240,9 +244,10 @@ runcmd:
 
 5. Change <your public SSH Key> with your public SSH Key
 
-NOTE: Remove <>
+>[!NOTE]
+Remove <>
 
-![picture of arch linux](./pictures/neovim.png)
+![picture of neovim](./pictures/neovim.png)
 
 6. Press ```esc``` to exit Insert Mode and type ```:wq``` to save and exit nvim
 
@@ -268,7 +273,8 @@ doctl compute image list-user
 
 * ```doctl compute image list-user``` retrieves a list of images that you have uploaded to your account.
 
-NOTE: Search for Arch Linux 
+>[!NOTE]
+Search for Arch Linux 
 
 4. **Run** the followig command to create your droplet
 
@@ -290,15 +296,17 @@ doctl compute droplet create --image 165064169 --size s-1vcpu-1gb --region sfo3 
 
 * ```--wait first-droplet``` tells the command to wait until the Droplet is fully deployed before proceeding.
 
-NOTE: Change < git-user > with your ID number from Deployment of Droplet with Cloud-init
+>[!NOTE]
+Change < git-user > with your ID number from Deployment of Droplet with Cloud-init
 
 Replace < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
 
-![picture of arch linux](./pictures/dropletcomute.png)
+![picture of droplet](./pictures/dropletcomute.png)
 
 5. Press Enter 
 
-NOTE: This command may take a minute
+>[!NOTE]
+This command may take a minute
 
 6. Copy and Paste the following command to verify if it worked
 
@@ -306,15 +314,19 @@ NOTE: This command may take a minute
 doctl compute droplet list
 
 ```
+![picture of list](./pictures/computelist.png)
+
+
 * ```doctl compute droplet list``` lists all the Droplets associated with your account which will allow you to verify your new Droplet.
 
 7. Type the following command to connect to your droplet
 
 ``` ssh -i < /path/to/private-key > username@your-droplet-ip ```
 
-![picture of arch linux](./pictures/2drop.png)
+![picture of new droplet](./pictures/2drop.png)
 
-NOTE: if ``` [Example@your-droplet ~]$ ``` appears you have successfully connected to your droplet 
+>[!NOTE]
+if ``` [Example@your-droplet ~]$ ``` appears you have successfully connected to your droplet 
 
 Your Droplet has been successfully created!
 

@@ -271,17 +271,38 @@ doctl compute ssh-key list
 
 3. Use the command below to check list of image
 
-```doctl compute image list-user```
+```
+doctl compute image list-user
 
-4. Run the followig command to create your droplet
+```
+
+* ```doctl compute image list-user``` retrieves a list of images that you have uploaded to your account.
+
+NOTE: Search for Arch Linux 
+
+4. **Run** the followig command to create your droplet
 
 ``` 
 doctl compute droplet create --image 165064169 --size s-1vcpu-1gb --region sfo3 --ssh-keys < git-user > --user-data-file < path-to-your-cloud-init-file > --wait first-droplet 
  
 ```
-NOTE: Change < git-user > with your ID number from step 2
+* ```doctl compute droplet create``` command initiates the creation of a new Droplet in your DigitalOcean account.
 
-Replace  < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
+* ```--image YOUR_IMAGE_ID``` specifies the ID of the image you wish to use for the Droplet.
+
+* ```--size s-1vcpu-1gb``` defines the resources allocated to your Droplet, including CPU and memory.
+
+* ```--region sfo3``` indicates the data center region where the Droplet will be hosted.
+
+* ```--ssh-keys YOUR_SSH_KEY_ID``` provides the ID of the SSH key to use for access.
+
+* ```--user-data-file PATH_TO_YOUR_CLOUD_INIT_FILE``` points to the cloud-init file for initial configuration.
+
+* ```--wait first-droplet``` tells the command to wait until the Droplet is fully deployed before proceeding.
+
+NOTE: Change < git-user > with your ID number from Deployment of Droplet with Cloud-init
+
+Replace < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
 
 (image)
 
@@ -291,18 +312,22 @@ NOTE: This command may take a minute
 
 (image)
 
-6. Type the following command to verify if it worked
+6. Copy and Paste the following command to verify if it worked
 
-``` doctl compute droplet list ```
+``` 
+doctl compute droplet list
 
-then copy the following command to connect to your droplet
+```
+* ```doctl compute droplet list``` lists all the Droplets associated with your account which will allow you to verify your new Droplet.
+
+7. Type the following command to connect to your droplet
 
 ``` ssh -i < /path/to/private-key > username@your-droplet-ip ```
 
-fix problem above, fixed
+NOTE: if ``` [Example@your-droplet ~]$ ``` appears you have successfully connected to your droplet 
 
+Your Droplet has been successfully created!
 
-NOTE: if ``` [Example@first-droplet ~]$ ``` appears you have successfully connected to your droplet
 
 
 

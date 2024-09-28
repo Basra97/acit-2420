@@ -175,11 +175,18 @@ Example: Validating token... ✔
 doctl compute ssh-key create "My SSH Key" --public-key "$(cat ~/.ssh/do-key.pub)"
 
 ``` 
+
+NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
+
+* ```doctl compute ssh-key create``` command creates a new SSH key associated with your DigitalOcean account
+
+* ```My SSH Key``` is the name you assign to your SSH key
+
+* ```--public-key "$(cat ~/.ssh/do-key.pub)"``` specifies the public key to be uploaded by reading it from the local file. The $(cat ~/.ssh/do-key.pub) retrieves the contents of your public key file.
+
 2. Press Enter 
 
 (image)
-
-NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
 
 3. Go to DigitalOcean and **click** settings. 
 

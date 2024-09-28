@@ -180,15 +180,11 @@ NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your 
 
 2. Press Enter 
 
-![picture of arch linux](./pictures/arch3.png)
+![picture of arch linux](./pictures/compute.png)
 
 3. Go to DigitalOcean and **click** settings. 
 
-![picture of arch linux](./pictures/arch3.png)
-
 3. Click security and see if your key is uplodaed
-
-![picture of arch linux](./pictures/arch3.png)
 
 
 ### Configuration of The Cloud Init File 
@@ -244,11 +240,9 @@ runcmd:
 
 NOTE: Remove <>
 
-![picture of arch linux](./pictures/arch3.png)
+![picture of arch linux](./pictures/neovim.png)
 
 6. Press ```esc``` to exit Insert Mode and type ```:wq``` to save and exit nvim
-
-![picture of arch linux](./pictures/arch3.png)
 
 ### Deployment of Droplet with Cloud-init
 
@@ -298,13 +292,11 @@ NOTE: Change < git-user > with your ID number from Deployment of Droplet with Cl
 
 Replace < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
 
-![picture of arch linux](./pictures/arch3.png)
+![picture of arch linux](./pictures/dropletcomute.png)
 
 5. Press Enter 
 
 NOTE: This command may take a minute
-
-![picture of arch linux](./pictures/arch3.png)
 
 6. Copy and Paste the following command to verify if it worked
 

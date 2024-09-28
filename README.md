@@ -28,15 +28,15 @@ The following instructions will guide you through the stages necessary for conf
 
 (https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) with the .qcow2 file extension, labeled as cloudimg. 
 
-![picture of arch linux](./pictures/arch.png)
+![picture of arch linux](./pictures/arch3.png)
 
 2. Go to Digital Ocean and click **manage**
 
-<img src="pictures/manage.png" alt="Manage Image" style="width:50%;">
+![picture of arch linux](./pictures/Untitled%20document%20(7).png)
 
 3. Click **Backups & Snapshots** on the dropdown menu
 
-<img src="pictures/Untitled document (3).png" alt="Manage Image" style="width:50%;">
+![picture of arch linux](./pictures/Untitled%20document%20(8).png)
 
 4. Click **Custom Images**
 
@@ -44,11 +44,7 @@ The following instructions will guide you through the stages necessary for conf
 
 6. Click on **distribution** and select Arch Linux
 
-<img src="pictures/Untitled document (4).png" alt="Manage Image" style="width:50%;">
-
 7. Select your closest region
-
-<img src="pictures/Screenshot 2024-09-25 at 10.36.18 PM.png" alt="Manage Image" style="width:50%;">
 
 8. **Click** Upload Image
 
@@ -66,7 +62,7 @@ a
 
 4. ```cd``` into .ssh to navigate to the newly opened directory. 
 
-(image)
+![picture of arch linux](./pictures/mkdir.png)
 
 
 NOTE: Run ls -a to confirm if .ssh has been made.
@@ -88,7 +84,7 @@ NOTE: Change "your email address" to your email of choice and you can change do-
 
 7. Type ```cd .ssh``` then use ```ls``` to confirm your authorized keys
 
-(image)
+![picture of arch linux](./pictures/ls.png) 
 
 ### Installing DOCTL 
 
@@ -109,13 +105,13 @@ brew install doctl
 ``` 
 * ```Brew install doctl``` command uses Homebrew to install the DigitalOcean command-line tool (doctl).
 
-(image)
+![picture of arch linux](./pictures/brew.png
 
 4.Type ```doctl version``` once installed to verify the installation
 
 * ```doctl version``` displays the version of doctl that is currently installed and verifies the installation.
 
-![Upload Image](./Pictures/Select%20your%20closes%20region%20and%20Click%20Upload%20Image.jpg)
+![Upload Image](./Pictures/doctl.png)
 
 ```doctl``` has been installed successfully!
 
@@ -123,13 +119,13 @@ brew install doctl
 
 1. Click API on the left hand side of the Menu on DigitalOcean
 
-(image)
+![picture of arch linux](./pictures/)
 
 2. Click **Generate New Token**
 
 3. Type a **Token Name**, and give it **full access** then click **Generate Token**
 
-(image)
+![picture of arch linux](./pictures/PI.png)
 
 4. Copy and Paste the **token** in a secure storage, file or server. 
 
@@ -157,13 +153,13 @@ NOTE: Change **NAME** to something appropiate
 
 Example: Validating token... ✔
 
-(image)
+![picture of arch linux](./pictures/validating.png)
 
 5. Run ```doctl account get``` to validate that doctl is working successfully
 
 * ```doctl account get``` retrieves and displays information about your DigitalOcean account
 
-(image) 
+![picture of arch linux](./pictures/doctlfn.png)
 
 ### Adding public key to your DigitalOcean Account using doctl
 
@@ -184,15 +180,15 @@ NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your 
 
 2. Press Enter 
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 3. Go to DigitalOcean and **click** settings. 
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 3. Click security and see if your key is uplodaed
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 
 ### Configuration of The Cloud Init File 
@@ -248,11 +244,11 @@ runcmd:
 
 NOTE: Remove <>
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 6. Press ```esc``` to exit Insert Mode and type ```:wq``` to save and exit nvim
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 ### Deployment of Droplet with Cloud-init
 
@@ -302,13 +298,13 @@ NOTE: Change < git-user > with your ID number from Deployment of Droplet with Cl
 
 Replace < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 5. Press Enter 
 
 NOTE: This command may take a minute
 
-(image)
+![picture of arch linux](./pictures/arch3.png)
 
 6. Copy and Paste the following command to verify if it worked
 

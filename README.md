@@ -76,13 +76,13 @@ NOTE: Run ls -a to confirm if .ssh has been made.
 
 5. Type ```ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"``` and **enter** to generate a new SSH key pair 
 
-- ```ssh-keygen``` command generates a SSH key pair
+* ```ssh-keygen``` command generates a SSH key pair
 
-- ```-t ed 25519``` specifies that the Ed25519 is the key type to create, as its known for its security
+* ```-t ed 25519``` specifies that the Ed25519 is the key type to create, as its known for its security
 
-- ```f ~/.ssh/do-key``` assigns the filename for the private key (do-key) in the .ssh directory; the public key will have the .pub extension by default.
+* ```f ~/.ssh/do-key``` assigns the filename for the private key (do-key) in the .ssh directory; the public key will have the .pub extension by default.
 
-- ```-C``` adds a comment to the key, often for identification, such as your email address.
+* ```-C``` adds a comment to the key, often for identification, such as your email address.
 
 NOTE: Change "your email address" to your email of choice and you can change do-key name, for example hello-key
 
@@ -102,16 +102,21 @@ NOTE: Change "your email address" to your email of choice and you can change do-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 ```
+* ```/bin/bash -c....``` downloads and executes HomeBrews installation
 
 3. Once installed, Type and run the following **command**
 
 ```
 brew install doctl
 ``` 
+* ```Brew install doctl``` command uses Homebrew to install the DigitalOcean command-line tool (doctl).
 
 (image)
 
 4.Type ```doctl version``` once installed to verify the installation
+
+* ```doctl version``` displays the version of doctl that is currently installed and verifies the installation.
+
 
 ![Upload Image](./Pictures/Select%20your%20closes%20region%20and%20Click%20Upload%20Image.jpg)
 

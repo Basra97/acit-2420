@@ -62,7 +62,7 @@ SSH keys allow you to securley connect to your Droplet, and they are safer than 
 
 2. Type ```cd``` to see your current directory
 
-3. Type ```mkdir .ssh``` 
+3. Type ```mkdir .ssh``` and ```cd``` into .ssh
 
 (image)
 
@@ -72,35 +72,18 @@ NOTE: Change "your email address" to your email of choice and you can change key
 
 5. Press **enter** and type a passphrase or press **enter** for no passphrase
 
-(image)
-
-### Adding public key to your DigitalOcean Account
-
-1. Copy and paste the following commands to copy your SSH key
-
-```pbcopy < ~/.ssh/do-key.pub``` 
-
-NOTE: Replace "do-key" with the name of your SSH key.
-
-2. Go to DigitalOcean and **click** settings. 
+6. Type cd .ssh then use ls to confirm your authorized keys
 
 (image)
-
-3. Click security and **add SSH key** 
-
-4. Paste the copied key in the content box then enter a SSH key name
-
-(image)
-
-NOTE: If error message "SSH key content must be a valid SSH key" enter backspace to troubleshoot this problem. 
-
-5. Click **Add SSH Key** 
 
 ### Installing DOCTL 
 
 1. Open your Terminal or Command Prompt
 
-2. Install Homebrew on your MacOs
+2. Install Homebrew on your MacOs by copying the following command
+
+``` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 3. Once installed, Type and run the following **command**
 
@@ -113,6 +96,29 @@ brew install doctl
 4.Type ```doctl version``` once installed to verify the installation
 
 ![Upload Image](./Pictures/Select%20your%20closes%20region%20and%20Click%20Upload%20Image.jpg)
+
+
+### Adding public key to your DigitalOcean Account using doctl
+
+1. Copy and paste the following commands to add SSH key to DigitalOcean 
+
+```
+doctl compute ssh-key create "My SSH Key" --public-key "$(cat ~/.ssh/do-key.pub)"
+
+``` 
+2. Press Enter 
+
+(image)
+
+NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
+
+3. Go to DigitalOcean and **click** settings. 
+
+(image)
+
+3. Click security and see if your key is uplodaed
+
+(image)
 
 ### Creating an API Token
 

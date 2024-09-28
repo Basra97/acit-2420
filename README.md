@@ -28,7 +28,7 @@ The following instructions will guide you through the stages necessary for conf
 
 (https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) with the .qcow2 file extension, labeled as cloudimg. 
 
-[Picture of arch linux download](./pictures/arch.png) 
+![picture of arch linux](./pictures/arch.png)
 
 2. Go to Digital Ocean and click **manage**
 

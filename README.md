@@ -1,19 +1,19 @@
 ## Creating a Remote Server with DigitalOcean using doctl
 
-NOTE: Instructions for MacOs Users
+NOTE: Instructions for MacOs Users 
 
 ## Table of Contents
 
 1. Introduction
-2. Prerequisites
-3. Step 1: Uploading Arch Linux Image
-4. Step 2: Create SSH Keys
-5. Step 3: Install and Configure doctl
-6. Step 4: Create a Custom Arch Linux Image
-7. Step 5: Create a Droplet with doctl
-8. Step 6: Connect to Your Droplet
-9. Conclusion
-10. References
+2. Instructions
+3. Uploading Arch Linux Image to DigitalOcean
+4. Creating SSH Key Pair 
+5. Installing doctl
+6. Creating an API Token
+7. Using The API Token to Grant access to doctl
+8. Adding public key to your DigitalOcean Account 
+9. Configuration of The Cloud Init File
+10. Deployment of Droplet with Cloud-init
 
 redo above after finishing
 
@@ -24,6 +24,8 @@ Use <br>
 In this tutorial, we will walk through the process of creating a remote server on DigitalOcean using the doctl command-line tool. We will utilize cloud-init to automate the initial configuration of the server, including user creation, package installation, and SSH key setup.
 
 ## Instructions
+
+The following instructions will guide you through the stages necessary for configuring the droplet with SSH keys and the doctl.
 
 ### Uploading Arch Linux Image 
  
@@ -97,29 +99,6 @@ brew install doctl
 
 ![Upload Image](./Pictures/Select%20your%20closes%20region%20and%20Click%20Upload%20Image.jpg)
 
-
-### Adding public key to your DigitalOcean Account using doctl
-
-1. Copy and paste the following commands to add SSH key to DigitalOcean 
-
-```
-doctl compute ssh-key create "My SSH Key" --public-key "$(cat ~/.ssh/do-key.pub)"
-
-``` 
-2. Press Enter 
-
-(image)
-
-NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
-
-3. Go to DigitalOcean and **click** settings. 
-
-(image)
-
-3. Click security and see if your key is uplodaed
-
-(image)
-
 ### Creating an API Token
 
 1. Click API on the left hand side of the Menu on DigitalOcean
@@ -159,6 +138,30 @@ Example Validating token... ✔
 5. Run ```doctl account get``` to validate that doctl is working successfully
 
 (image)
+
+
+### Adding public key to your DigitalOcean Account using doctl
+
+1. Copy and paste the following commands to add SSH key to DigitalOcean 
+
+```
+doctl compute ssh-key create "My SSH Key" --public-key "$(cat ~/.ssh/do-key.pub)"
+
+``` 
+2. Press Enter 
+
+(image)
+
+NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your preferred name
+
+3. Go to DigitalOcean and **click** settings. 
+
+(image)
+
+3. Click security and see if your key is uplodaed
+
+(image)
+
 
 ### Configuration of The Cloud Init File 
 

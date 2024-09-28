@@ -141,28 +141,31 @@ Your API token has been created!
 
 ### Using The API Token to Grant access to doctl
 
-1. Open terminal or command prompt
+1. Open terminal 
 
 2. Type the following command 
 
 ```doctl auth init --context NAME```
 
+* ```doctl auth init``` initalizes doctl with your API token for authentication
+
+* ```--context NAME``` is a parameter that sets a custom name for the context which will help differentiate between multiple configurations.
+
 NOTE: Change **NAME** to something appropiate
 
-3. Copy and Paste your generated token into the terminal
-
-(image)
+3. Copy and Paste your generated token into the terminal 
 
 4. Press Enter and wait for a green checkmark.
 
-Example Validating token... ✔
+Example: Validating token... ✔
 
 (image)
 
 5. Run ```doctl account get``` to validate that doctl is working successfully
 
-(image) 
+* ```doctl account get``` retrieves and displays information about your DigitalOcean account
 
+(image) 
 
 ### Adding public key to your DigitalOcean Account using doctl
 

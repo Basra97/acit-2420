@@ -235,7 +235,7 @@ NOTE: This command may take a minute
 
 7. Type the following command to verify if it worked
 
-doctl compute droplet list
+``` doctl compute droplet list ```
 
 then copy the following command to connect to your droplet
 
@@ -245,6 +245,8 @@ fix problem above, fixed
 
 
 NOTE: if ``` [Example@first-droplet ~]$ ``` appears you have successfully connected to your droplet
+
+
 
 
 

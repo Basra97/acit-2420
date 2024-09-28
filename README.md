@@ -1,4 +1,4 @@
-## Creating a Remote Server with DigitalOcean using doctl (MacOs)
+## Creating a Remote Server with DigitalOcean using doctl (MacOS)
 
 ## Table of Contents
 
@@ -12,6 +12,7 @@
 8. Adding public key to your DigitalOcean Account 
 9. Configuration of The Cloud Init File
 10. Deployment of Droplet with Cloud-init
+
 
 ## Introduction
 
@@ -119,13 +120,13 @@ brew install doctl
 
 1. Click API on the left hand side of the Menu on DigitalOcean
 
-![picture of arch linux](./pictures/)
+![picture of arch linux](./pictures/PI.png)
 
 2. Click **Generate New Token**
 
 3. Type a **Token Name**, and give it **full access** then click **Generate Token**
 
-![picture of arch linux](./pictures/PI.png)
+![picture of arch linux](./pictures/pat.png)
 
 4. Copy and Paste the **token** in a secure storage, file or server. 
 
@@ -310,9 +311,14 @@ doctl compute droplet list
 
 ``` ssh -i < /path/to/private-key > username@your-droplet-ip ```
 
+![picture of arch linux](./pictures/2drop.png)
+
 NOTE: if ``` [Example@your-droplet ~]$ ``` appears you have successfully connected to your droplet 
 
 Your Droplet has been successfully created!
+
+![picture of arch linux](./pictures/secondroplet.png)
+
 
 ### References
 

@@ -328,6 +328,25 @@ NOTE: if ``` [Example@your-droplet ~]$ ``` appears you have successfully connect
 
 Your Droplet has been successfully created!
 
+### References
+
+How to add SSH public keys to Digitalocean teams. DigitalOcean Documentation. (n.d.-b). https://docs.digitalocean.com/platform/teams/upload-ssh-keys/ 
+
+Markdown guide. Markdown Guide. (n.d.). https://www.markdownguide.org/ 
+
+Pandiyan, D. (2024, July 27). Installing Neovim in macos. Dinesh Pandiyan. https://dineshpandiyan.com/blog/install-neovim-macos/ 
+
+How to automate droplet setup with cloud-init. DigitalOcean Documentation. (n.d.). https://docs.digitalocean.com/products/droplets/how-to/automate-setup-with-cloud-init/ 
+
+How to create a personal access token. DigitalOcean Documentation. (n.d.-b). https://docs.digitalocean.com/reference/api/create-personal-access-token/ 
+
+How to install and configure doctl. DigitalOcean Documentation. (n.d.-c). https://docs.digitalocean.com/reference/doctl/how-to/install/ 
+
+McNinch, N. 2420-notes/week-two.md GITLAB. GitLab. (n.d.). https://gitlab.com/cit2420/2420-notes-f24/-/blob/main/2420-notes/week-two.md 
+
+Doctl compute droplet create. DigitalOcean Documentation. (n.d.-a). https://docs.digitalocean.com/reference/doctl/reference/compute/droplet/create/ 
+
+Install Homebrew · mac install guide · 2024. Install Guide Â· Mac. (2024, May 18). https://mac.install.guide/homebrew/3 
 
 
 

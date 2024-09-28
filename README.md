@@ -117,8 +117,9 @@ brew install doctl
 
 * ```doctl version``` displays the version of doctl that is currently installed and verifies the installation.
 
-
 ![Upload Image](./Pictures/Select%20your%20closes%20region%20and%20Click%20Upload%20Image.jpg)
+
+```doctl``` has been installed successfully!
 
 ### Creating an API Token
 
@@ -135,6 +136,8 @@ brew install doctl
 4. Copy and Paste the **token** in a secure storage, file or server. 
 
 NOTE: A **Generated Token** is only shown once.
+
+Your API token has been created!
 
 ### Using The API Token to Grant access to doctl
 
@@ -158,7 +161,7 @@ Example Validating token... ✔
 
 5. Run ```doctl account get``` to validate that doctl is working successfully
 
-(image)
+(image) 
 
 
 ### Adding public key to your DigitalOcean Account using doctl

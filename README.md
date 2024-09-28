@@ -1,6 +1,4 @@
-## Creating a Remote Server with DigitalOcean using doctl
-
-NOTE: Instructions for MacOs Users 
+## Creating a Remote Server with DigitalOcean using doctl (MacOs)
 
 ## Table of Contents
 
@@ -8,14 +6,12 @@ NOTE: Instructions for MacOs Users
 2. Instructions
 3. Uploading Arch Linux Image to DigitalOcean
 4. Creating SSH Key Pair 
-5. Installing doctl
+5. Installing ```doctl```
 6. Creating an API Token
 7. Using The API Token to Grant access to doctl
 8. Adding public key to your DigitalOcean Account 
 9. Configuration of The Cloud Init File
 10. Deployment of Droplet with Cloud-init
-
-redo above after finishing
 
 Use <br>
 
@@ -27,10 +23,12 @@ In this tutorial, we will walk through the process of creating a remote server o
 
 The following instructions will guide you through the stages necessary for configuring the droplet with SSH keys and the doctl.
 
-### Uploading Arch Linux Image 
- 
 
-1. Download the latest **Arch Linux** (https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) image with the .qcow2 file extension, labeled as cloudimg. 
+### Uploading Arch Linux Image 
+
+1. Download the latest **Arch Linux** image from 
+
+(https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) with the .qcow2 file extension, labeled as cloudimg. 
 
 <img src="pictures/arch.png" alt="Manage Image" style="width:50%;">
 
@@ -56,35 +54,53 @@ The following instructions will guide you through the stages necessary for conf
 
 8. **Click** Upload Image
 
+Your Arch Linux image has been successfully uploaded to DigitalOcean!
+
 ### Creating SSH Keys
 
 SSH keys allow you to securley connect to your Droplet, and they are safer than passwords since the private key remains on your computer.
+a
+1. Open your Terminal 
 
-1. Open your Terminal or Command Prompt
+2. Type ```cd``` to see change to your user home directory
 
-2. Type ```cd``` to see your current directory
+3. Type ```mkdir .ssh``` to create a directory called .ssh 
 
-3. Type ```mkdir .ssh``` and ```cd``` into .ssh
+4. ```cd``` into .ssh to navigate to the newly opened directory. 
 
 (image)
 
-4. Type ```ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"``` and **enter** to generate a new SSH key pair
 
-NOTE: Change "your email address" to your email of choice and you can change key name, for example hello-key
+NOTE: Run ls -a to confirm if .ssh has been made.
 
-5. Press **enter** and type a passphrase or press **enter** for no passphrase
 
-6. Type cd .ssh then use ls to confirm your authorized keys
+5. Type ```ssh-keygen -t ed25519 -f ~/.ssh/do-key -C "your email address"``` and **enter** to generate a new SSH key pair 
+
+- ```ssh-keygen``` command generates a SSH key pair
+
+- ```-t ed 25519``` specifies that the Ed25519 is the key type to create, as its known for its security
+
+- ```f ~/.ssh/do-key``` assigns the filename for the private key (do-key) in the .ssh directory; the public key will have the .pub extension by default.
+
+- ```-C``` adds a comment to the key, often for identification, such as your email address.
+
+NOTE: Change "your email address" to your email of choice and you can change do-key name, for example hello-key
+
+6. Press **enter** and type a passphrase or press **enter** for no passphrase
+
+7. Type ```cd .ssh``` then use ```ls``` to confirm your authorized keys
 
 (image)
 
 ### Installing DOCTL 
 
-1. Open your Terminal or Command Prompt
+1. Open your Terminal
 
 2. Install Homebrew on your MacOs by copying the following command
 
-``` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+``` 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 ```
 
 3. Once installed, Type and run the following **command**
@@ -255,10 +271,7 @@ NOTE: if ``` [Example@first-droplet ~]$ ``` appears you have successfully connec
 
 
 
-add public key to digitalocean using doctl
 
-
-use doctl to add arch linux file to digital ocean
 
 
 

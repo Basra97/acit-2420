@@ -199,17 +199,23 @@ NOTE: Replace "do-key" with the name of your SSH key and "My SSH Key" with your 
 
 ### Configuration of The Cloud Init File 
 
-**install neovim** 
+1. Copy and Paste the following to **install neovim** 
 
-``` brew install neovim
+```
+brew install neovim
+
 ```
 
-1. Type the following command to create a file
+* ```brew install neovim``` installs the Neovim text editor 
+
+2. Type the following command to create a file
 
 ```nvim cloud-config.yaml```
 
-2. Copy and Paste the following content into the **file**, then pres i for "insert mode"
-#
+* ```nvim cloud-config.yaml``` opens the Neovim editor to create or edit the cloud-config.yaml file.
+
+3. Copy and Paste the following content into the **file**, then pres ```i```for "insert mode"
+
 #cloud-config
 users:
   - name: example-user
@@ -224,35 +230,50 @@ runcmd:
   - 'export PUBLIC_IPV4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)'
   - 'echo Droplet: $(hostname), IP Address: $PUBLIC_IPV4 > /var/www/html/index.html'
 
-3. Change name to your name
+* ```users``` specifies a list of users to create on the system.
 
-4. Change gh:<your public SSH Key> with your SSH Key
+* ```name``` defines the username for the newly created user.
+
+* ```shell``` Specifies the default shell for the user.
+
+* ```sudo``` provides the user with unrestricted sudo access.
+
+* ```ssh_authorized_keys``` lists SSH keys that will be authorized for the user.
+
+* ```disable_root true``` prevents root access from SSH to improve security.
+
+* ```packages``` identifies packages to install during the initial boot
+
+4. Change name to your something of your choice
+
+5. Change <your public SSH Key> with your public SSH Key
 
 NOTE: Remove <>
 
 (image)
 
-5. Press esc to exit Insert Mode and type :wq to save and exit nvim
+6. Press ```esc``` to exit Insert Mode and type ```:wq``` to save and exit nvim
 
 (image)
-
-go to home and see if the yaml file is made
 
 ### Deployment of Droplet with Cloud-init
 
 1. Open Terminal 
 
-2. Type or Copy the following command, then locate your key ID
+2. Copy the following command, then locate your key ID
 
-``` doctl compute ssh-key list ```
+``` 
+doctl compute ssh-key list 
 
-3. Copy and Paste the following into the terminal
+```
 
-4. Use the command below to check list of image
+* ```doctl compute ssh-key list``` lists all the SSH keys associated with your DigitalOcean account which will allow you to find the ID for your newly added key.
+
+3. Use the command below to check list of image
 
 ```doctl compute image list-user```
 
-5. Run the followig command to create your droplet
+4. Run the followig command to create your droplet
 
 ``` 
 doctl compute droplet create --image 165064169 --size s-1vcpu-1gb --region sfo3 --ssh-keys < git-user > --user-data-file < path-to-your-cloud-init-file > --wait first-droplet 
@@ -264,13 +285,13 @@ Replace  < path-to-your-cloud-init-file > to the path of your cloud-config.yaml 
 
 (image)
 
-6. Press Enter 
+5. Press Enter 
 
 NOTE: This command may take a minute
 
 (image)
 
-7. Type the following command to verify if it worked
+6. Type the following command to verify if it worked
 
 ``` doctl compute droplet list ```
 

@@ -106,7 +106,7 @@ brew install doctl
 ``` 
 * ```Brew install doctl``` command uses Homebrew to install the DigitalOcean command-line tool (doctl).
 
-![picture of arch linux](./pictures/brew.png
+![picture of arch linux](./pictures/brew.png)
 
 4.Type ```doctl version``` once installed to verify the installation
 
@@ -146,7 +146,8 @@ Your API token has been created!
 
 * ```--context NAME``` is a parameter that sets a custom name for the context which will help differentiate between multiple configurations.
 
-NOTE: Change **NAME** to something appropiate
+>[!NOTE]
+ Change **NAME** to something appropiate
 
 3. Copy and Paste your generated token into the terminal 
 

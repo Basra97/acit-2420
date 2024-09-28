@@ -162,7 +162,10 @@ Example Validating token... ✔
 
 ### Configuration of The Cloud Init File 
 
-**install neovim** explain
+**install neovim** 
+
+``` brew install neovim
+```
 
 1. Type the following command to create a file
 
@@ -194,6 +197,8 @@ NOTE: Remove <>
 
 5. Press esc to exit Insert Mode and type :wq to save and exit nvim
 
+(image)
+
 go to home and see if the yaml file is made
 
 ### Deployment of Droplet with Cloud-init
@@ -206,14 +211,19 @@ go to home and see if the yaml file is made
 
 3. Copy and Paste the following into the terminal
 
+4. Use the command below to check list of image
+
+```doctl compute image list-user```
+
+5. Run the followig command to create your droplet
+
 ``` 
-doctl compute droplet create --image 165064223 --size s-1vcpu-1gb --region sfo3 --ssh-keys 43339841 --user-data-file /Users/karanbasra/cloud-config.yaml --wait first-droplet
+doctl compute droplet create --image 165064169 --size s-1vcpu-1gb --region sfo3 --ssh-keys < git-user > --user-data-file < path-to-your-cloud-init-file > --wait first-droplet 
  
 ```
+NOTE: Change < git-user > with your ID number from step 2
 
-4. Change < git-user > with your ID number from step 2
-
-5. Replace  < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
+Replace  < path-to-your-cloud-init-file > to the path of your cloud-config.yaml file
 
 (image)
 
@@ -225,16 +235,16 @@ NOTE: This command may take a minute
 
 7. Type the following command to verify if it worked
 
+doctl compute droplet list
+
+then copy the following command to connect to your droplet
+
 ``` ssh -i < /path/to/private-key > username@your-droplet-ip ```
-
-or
-
-``` doctl compute droplet list ```
 
 fix problem above, fixed
 
 
-NOTE: if ``` [Karn@first-droplet ~]$ ``` appears you have successfully connected to your droplet
+NOTE: if ``` [Example@first-droplet ~]$ ``` appears you have successfully connected to your droplet
 
 
 

@@ -13,8 +13,6 @@
 9. Configuration of The Cloud Init File
 10. Deployment of Droplet with Cloud-init
 
-Use <br>
-
 ## Introduction
 
 In this tutorial, we will walk through the process of creating a remote server on DigitalOcean using the doctl command-line tool. We will utilize cloud-init to automate the initial configuration of the server, including user creation, package installation, and SSH key setup.
@@ -30,7 +28,7 @@ The following instructions will guide you through the stages necessary for conf
 
 (https://gitlab.archlinux.org/archlinux/arch-boxes/-/packages/) with the .qcow2 file extension, labeled as cloudimg. 
 
-<img src="pictures/arch.png" alt="Manage Image" style="width:50%;">
+[Upload Image](./Pictures/arch.png) 
 
 2. Go to Digital Ocean and click **manage**
 
